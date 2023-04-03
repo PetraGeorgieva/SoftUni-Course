@@ -4,6 +4,6 @@ function sumOfElements (array) {
   let sum = firstElemnt + lastelement
   console.log(sum)
 }
-let array = [20,30,40]
-sumOfElements(array)
+let arrays = [20,30,40]
+sumOfElements(arrays)
 sumOfElements([10,17,22,33])
