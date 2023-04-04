@@ -1,6 +1,6 @@
 function  reversedChars (fristchart,secondchart,thirthchart) {
 
-    console.log(`${thirthchart} ${fristchart} ${secondchart}`)
+    console.log(`${thirthchart} ${secondchart} ${fristchart}`)
 }
 reversedChars('A',
 'B',
