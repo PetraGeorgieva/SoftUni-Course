@@ -7,9 +7,16 @@ function spiceMustFlow(startingYield ) {
         extraxt-=26
         startingYield -=10
 
-     }
-     extraxt-=26
-     console.log(counter)
+     } 
+      if (extraxt > 26){
+         extraxt-=26
+         console.log(counter)
      console.log(extraxt)
+      } else {
+         console.log(counter)
+         console.log(extraxt)
+      }
+     
+     
 }
 spiceMustFlow(111);

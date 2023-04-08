@@ -8,10 +8,10 @@ function daysofweeks(n) {
     'Saturday',
     'Sunday'
    ]
-   if (n >1&& n < 7){
+   if (n >= 1 && n <= 7){
     console.log(days[ n -1])
    } else  {
     console.log('Invalid day!')
    }
 }
-daysofweeks(8)
+daysofweeks(7)
