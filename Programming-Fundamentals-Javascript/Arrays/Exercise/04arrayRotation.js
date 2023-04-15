@@ -4,7 +4,7 @@ function arrayRotation(array,numofRotation) {
     for (let i = 0 ; i < numofRotation; i++){  // that in poor words means in this case that 2 numbers are going to go in the end of the array
         let currentElement = array[0]          // we select the first element that is going in the end
     for (i1 = 1 ; i1 < array.length ; i1++){  // so the cicle starts from the second element
-        newarray.push(array[i1])              // we push in a new array evry elements of the array 
+        newarray.push(array[i1])              // we push in a new array every elements of the array 
     }
         newarray.push(currentElement);       // and in the end the firs element 
         array = newarray;                   // our array is now equal to the new array
