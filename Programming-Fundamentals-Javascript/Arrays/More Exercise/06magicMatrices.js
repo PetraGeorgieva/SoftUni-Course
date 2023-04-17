@@ -1,4 +1,4 @@
-function magicMatrix(array) {
+function magicMatrices(array) {
     let sum = array[0].reduce((a, b) => a + b, 0);
     let isMagic = true;
 
@@ -13,7 +13,7 @@ function magicMatrix(array) {
     }
     console.log(isMagic);
 }
-magicMatrix([[4, 5, 6],
+magicMatrices([[4, 5, 6],
     [6, 5, 4],
     [5, 5, 5]]
    )
