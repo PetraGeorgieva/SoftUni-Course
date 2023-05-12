@@ -7,5 +7,6 @@ function sumofoddNumbers(n) {
          odds+=2
     }
      console.log(`Sum: ${results}`)
+
 }
 sumofoddNumbers(3)
