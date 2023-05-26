@@ -15,7 +15,7 @@ function manOwar(arr) {
         case 'Retire': 
        console.log(`Pirate ship status: ${statusOfPIrateShip.reduce((a,c) => a+c,0)}`)
        console.log(`Warship status: ${statusOfWarShip.reduce((a,c) => a+c,0)}`)
-       break;
+       return;
       
       }
       if(isShipDead(statusOfWarShip)){
