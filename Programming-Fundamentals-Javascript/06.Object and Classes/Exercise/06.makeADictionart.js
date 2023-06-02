@@ -2,13 +2,14 @@ function dictionary(array){
     let newObj = {}
 for (let el of array) {
     let names = JSON.parse(el);
-    newObj = Object.assign(newObj,names)
+    let keys = Object.keys(names)
+    let key = keys[0];
+    newObj[key] = names[key]
 }
-let sortedKeys = Object.keys(newObj); // turn the key into array
-sortedKeys.sort((a, b) => a.localeCompare(b));   
+let sortedKeys = Object.keys(newObj).sort((a, b) => a.localeCompare(b));   
  
-for (let term of sortedKeys) {
-    console.log(`Term: ${term} => Definition: ${newObj[term]}`);
+for (let key of sortedKeys) {
+    console.log(`Term: ${key} => Definition: ${newObj[key]}`);
 }
 }
 
