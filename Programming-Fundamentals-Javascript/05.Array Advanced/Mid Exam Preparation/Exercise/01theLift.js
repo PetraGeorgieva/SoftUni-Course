@@ -37,8 +37,8 @@ function lift(array) {
     }
 }
 lift([
-    "12",
-    "0 0 0"
+    "8",
+    "0 2 0"
 ]
 
 )

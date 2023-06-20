@@ -17,10 +17,10 @@ for (let i = 0; i < numberOfSongs; i++) {
   songs.push(song)
 }
 if(typeofsong === 'all'){
-    songs.forEach((i) => console.log(i.name));
+    songs.forEach((song) => console.log(song.name));
  } else {
-    let filtered = songs.filter((i)=> i.type === typeofsong);
-    filtered.forEach((i)=> console.log(i.name))
+    let filtered = songs.filter((song)=> song.type === typeofsong);
+    filtered.forEach((song)=> console.log(song.name))
  }
 
 
