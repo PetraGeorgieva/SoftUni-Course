@@ -1,24 +1,24 @@
 function garages(params) {
 let newMap = new Map()
 for (let i = 0; i < params.length; i++) {
-    let garage = params[i].split(' - ')
-    let info = garage[1].split(', ')
-    if(newMap.has(garage[0])){
-        for(let line of info){
-            let infos = line.split(': ')
-            newMap.get(garage[0]).set(infos[0],infos[1]);
-        }
+    let [garage,info] = params[i].split(' - ')
+    if(!newMap.has(garage)){
+            newMap.set(garage,[info]);
     }else{
-        newMap.set(garage[0], new Map());
-        for(let line of info){
-            let infos = line.split(': ')
-            newMap.get(garage[0]).set(infos[0],infos[1]);
-        }
+    let availableCars = newMap.get(garage);
+        availableCars.push(info);
+        newMap.set(garage,availableCars)
     }    
 }
-let newMapArr = [...newMap.entries()];
-for (let riga of newMapArr) {
- console.log(riga[1])
+let newMapArr = [...newMap.entries()].sort((a,b)=> a[0]-b[0]);
+let result  =''
+for (let[currentGarage,currKeyValue] of newMapArr) {
+ result+= `Garage № ${currentGarage}\n`;
+ for (let currentCarInfo of currKeyValue) {
+    currentCarInfo = currentCarInfo.replace(/: /g, ' - ');
+    result += `--- ${currentCarInfo}\n`;
+ }
 }
+console.log(result)
 }
 garages(['1 - color: blue, fuel type: diesel', '1 - color: red, manufacture: Audi', '2 - fuel type: petrol', '4 - color: dark blue, fuel type: diesel, manufacture: Fiat']);   
