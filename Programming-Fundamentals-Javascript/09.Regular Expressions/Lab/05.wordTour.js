@@ -19,7 +19,7 @@ function worldTour(params) {
                 let secondIndex =Number(commands[2]);
                 if(firstIndex >= 0 && firstIndex < stops.length && secondIndex >= 0 && secondIndex < stops.length ){
                      stops = stops.split('')
-                     stops.splice(firstIndex,secondIndex-firstIndex);
+                     stops.splice(firstIndex,(secondIndex-firstIndex)+1);
                      stops = stops.join('');
                      console.log(stops)
                 }
