@@ -12,6 +12,8 @@ function worldTour(params) {
                     stops.splice(index,0,string);
                     stops = stops.join('');
                     console.log(stops)
+                } else{
+                    console.log(stops) 
                 }
                 break;
             case 'Remove Stop':
@@ -22,6 +24,8 @@ function worldTour(params) {
                      stops.splice(firstIndex,(secondIndex-firstIndex)+1);
                      stops = stops.join('');
                      console.log(stops)
+                } else{
+                    console.log(stops) 
                 }
                 break;
             case 'Switch':
@@ -30,6 +34,8 @@ function worldTour(params) {
                 if(stops.includes(oldString)){
                  stops =  stops.replace(oldString,newString)
                   console.log(stops)
+                } else{
+                    console.log(stops) 
                 }
                 break;
         }
@@ -37,8 +43,8 @@ function worldTour(params) {
     }
     console.log(`Ready for world tour! Planned stops: ${stops}`)
 }
-worldTour(["Hawai::Cyprys-Greece",
-"Add Stop:7:Rome",
-"Remove Stop:11:16",
-"Switch:Hawai:Bulgaria",
+worldTour(["Albania:Bulgaria:Cyprus:Deuchland",
+"Add Stop:3:Nigeria",
+"Remove Stop:4:8",
+"Switch:Albania: Azərbaycan",
 "Travel"])
