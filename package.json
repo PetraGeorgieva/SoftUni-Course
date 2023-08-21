@@ -1,0 +1,23 @@
+{
+  "name": "softuni-course",
+  "version": "1.0.0",
+  "description": "Courses from my education @Softuni.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PetraGeorgieva/SoftUni-Course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PetraGeorgieva/SoftUni-Course/issues"
+  },
+  "homepage": "https://github.com/PetraGeorgieva/SoftUni-Course#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
