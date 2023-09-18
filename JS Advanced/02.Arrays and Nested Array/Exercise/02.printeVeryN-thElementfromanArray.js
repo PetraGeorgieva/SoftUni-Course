@@ -3,7 +3,7 @@ function print(input,n) {
   for (let i = 0; i < input.length; i+=n) {
    arr.push(input[i])
   }
-  console.log(arr) 
+  return arr;
 }
 print(['5', 
 '20', 
