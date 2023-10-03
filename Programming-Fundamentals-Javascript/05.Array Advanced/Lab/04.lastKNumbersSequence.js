@@ -1,3 +1,4 @@
+
 function lastKNumbersSequence(n, k) {
    let result = [1];
    for (let current = 1; current < n; current++) {
