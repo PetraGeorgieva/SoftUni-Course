@@ -1,6 +1,6 @@
 function solution(n) {
   return function add5 (n2) {
-    return result = n+n2;
+    return result = n+n2;     // n diventa closure 
   }
 }
 let add5 = solution(5);

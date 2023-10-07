@@ -1,56 +1,40 @@
- function solution (post,arg) {
-         arg(post);
-        function upvote (obj) {
-            this.upvotes += 1
-        };
-        function downvote(obj) {
-            this.downvotes += 1
-        }
-        function score(obj) {
-            
-            "use strict";
-            let upVotes = object['upvotes'];
-            let downVotes = object['downvotes'];
-            let result = [];
-            let obfuscationNumber = 0;
-            let maxVotes;
-            if ((upVotes + downVotes) > 50) {
-                maxVotes = Math.max(upVotes, downVotes);
-                obfuscationNumber = Math.ceil(0.25 * maxVotes);
+solution = (() => {
+    
+    const commands = {
+        upvote: (post) => post.upvotes++,
+        downvote: (post) => post.downvotes++,
+        score: (post) => {
+            let {upvotes, downvotes} = post;
+            let total = upvotes + downvotes;
+            // let balance = upvotes - downvotes;
+ 
+            let obfuscated = Math.ceil(0.25 * Math.max(upvotes,downvotes));
+            let obfuscatedUpVotes = upvotes + obfuscated;
+            let obfuscatedDownVotes = downvotes + obfuscated;
+            let balance = obfuscatedUpVotes - obfuscatedDownVotes;
+
+            let rating = '';
+ 
+            if (total < 10) {
+              rating = 'new';
+            } else if (upvotes > total * 0.66) {
+              rating = 'hot';
+            } else if (balance >= 0 && (upvotes > 100 || downvotes > 100)) {
+              rating = 'controversial';
+            } else if (balance < 0) {
+              rating = 'unpopular';
+            } else {
+              rating = 'new';
             }
-            result.push(upVotes + obfuscationNumber);
-            result.push(downVotes + obfuscationNumber);
-            result.push(upVotes - downVotes);
-            let rating = getRating(object);
-            result.push(rating);
-            return result;
-        }
-        }
-
-
+             if (total > 50) {
+                 return [obfuscatedUpVotes, obfuscatedDownVotes, balance, rating];
+            }
+            return [upvotes, downvotes, balance, rating];
+          }
+    };
  
-    function getRating(object) {
-        let upVotes = object['upvotes'];
-        let downVotes = object['downvotes'];
-        let totalVotes = upVotes + downVotes;
-        let balance = upVotes - downVotes;
- 
-        if (totalVotes < 10) {
-            return 'new';
-        }
-        if ((upVotes / totalVotes) > 0.66) {
-            return 'hot';
-        }
-        if ((downVotes / totalVotes <= 0.66) && balance >= 0 && (upVotes > 100 || downVotes > 100)) {
-            return 'controversial';
-        }
-        if (balance < 0 && totalVotes >= 10) {
-            return 'unpopular';
-        }
-        return 'new';
-    }
-
-
+    return {call:(post, command) => commands[command](post)}
+})();
 let post = {
     id: '3',
     author: 'emil',
@@ -62,4 +46,4 @@ solution.call(post, 'upvote');
 solution.call(post, 'downvote');
 let score = solution.call(post, 'score'); // [127, 127, 0, 'controversial']
 solution.call(post, 'downvote');         // (executed 50 times)
-score = solution.call(post, 'score');     
+score = solution.call(post, 'score');     // [139, 189, -50, 'unpopular']

@@ -7,11 +7,11 @@ function focused() {
     }
 
     function inputFocus(e) {
-        const sectionElement = e.target.parentNode;
-        sectionElement.className= 'focused'
+        const sectionElement = e.target.parentNode;  // <div>
+        sectionElement.classList.add('focused');
     }
     function inputBlur(e) {
-        const sectionElement = e.target.parentNode;
-        sectionElement.className = ''
+        const sectionElement = e.target.parentNode; //div
+        sectionElement.classList.remove('focused');
     }
 } 

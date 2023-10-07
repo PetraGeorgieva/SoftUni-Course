@@ -5,11 +5,12 @@ function printDeckOfCards (card) {
             let [face, faces,suits] = el.split('')
             face = face+=faces;
             let cardCreated =  createCard(face,suits);
-            result.push(cardCreated.fine)
+              result.push(cardCreated.fine)   
         }else{
             let [face, suits] = el.split('')
             let cardCreated =  createCard(face,suits);
-            result.push(cardCreated.fine)
+        
+              result.push(cardCreated.fine)
 
         }
        
@@ -45,8 +46,7 @@ function printDeckOfCards (card) {
               fine: `${face}${carSuits[suits]}`
               } 
           } else{
-          console.log(`Invalid card: ${face}${suits}`);
-          return;
+            console.log(`Invalid card: ${face}${suits}`);
         }
       }
 

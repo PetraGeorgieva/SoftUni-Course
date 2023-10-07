@@ -1,5 +1,5 @@
 function solution() {
-  let string = "";
+  let string = ""; // string
 
   return {
     append: (s) => (string += s),
@@ -10,9 +10,11 @@ function solution() {
 }
 
 let firstZeroTest = solution();
-
-firstZeroTest.append("hello");
-firstZeroTest.append("again");
-firstZeroTest.removeStart(3);
-firstZeroTest.removeEnd(4);
+   // return an object that can do 
+   // append, remove,removeEnd,print => function;
+   // 
+   firstZeroTest.append("hello");
+   firstZeroTest.append("again");
+   firstZeroTest.removeStart(3);
+   firstZeroTest.removeEnd(4);
 firstZeroTest.print();

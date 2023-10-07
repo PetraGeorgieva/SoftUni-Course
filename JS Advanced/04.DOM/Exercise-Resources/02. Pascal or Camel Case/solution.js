@@ -1,6 +1,7 @@
 function solve() {
   const CAMEL_CASE = "Camel Case";
   const PASCAL_CASE = "Pascal Case";
+  
   const inputValue = document
     .getElementById("text")
     .value.toLocaleLowerCase();
