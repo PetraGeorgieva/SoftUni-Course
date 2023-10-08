@@ -14,4 +14,4 @@ function subSum(array, starIndex, endIndex) {
   }
     console.log(sum);
 }
-subSum([10, 'twenty', 30, 40], 0, 2)
+subSum([10, 22, 30, 40], 0, 2)
